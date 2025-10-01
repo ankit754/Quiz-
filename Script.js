@@ -43,9 +43,9 @@ document.getElementById("start-quiz").addEventListener("click", function () {
     questions.forEach((q, index) => {
         let div = document.createElement("div");
         div.classList.add("quiz-question");
-        div.innerHTML = `<p>${index + 1}. ${q.question}</p>` +
+        div.innerHTML = <p>${index + 1}. ${q.question}</p> +
             q.options.map((opt, i) => 
-                `<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label><br>`
+                <label><input type="radio" name="q${index}" value="${i}"> ${opt}</label><br>
             ).join("");
         quizBox.appendChild(div);
     });
@@ -59,12 +59,12 @@ document.getElementById("start-quiz").addEventListener("click", function () {
 function checkAnswers() {
     let score = 0;
     questions.forEach((q, index) => {
-        let selected = document.querySelector(`input[name="q${index}"]:checked`);
+        let selected = document.querySelector(input[name="q${index}"]:checked);
         if (selected && parseInt(selected.value) === q.answer) {
             score++;
         }
     });
-    alert(`Your Score: ${score} / ${questions.length}`);
+    alert(Your Score: ${score} / ${questions.length});
 }
 
 // Clear Questions
